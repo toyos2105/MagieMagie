@@ -17,9 +17,17 @@ public class Joueur {
     }
     
     public Joueur(String name) {
-        this.nom=name;
+        this.nom = name;
+        this.cartes = new ArrayList();
+    }
+    
+    public Joueur(String name, ArrayList<Carte> c) {
+        this.nom = name;
+        this.cartes = c;
     }
 
+  
+    
     public String getNom() {
         return nom;
     }
