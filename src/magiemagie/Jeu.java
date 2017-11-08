@@ -60,11 +60,8 @@ public class Jeu {
                 Random rand = new Random();
                 int id=rand.nextInt(nbCartes) + 1;
                 myJoueur.getCartes().add(this.jeuCartes.get(id));
-                this.jeuTextArea.append(i+" - "+this.jeuCartes.get(id) +" -> "+ typeCartes.get(this.jeuCartes.get(id))+"\n");
+                this.jeuTextArea.append(i+" - "+this.jeuCartes.get(id).getType() +" -> "+ typeCartes.get(this.jeuCartes.get(id).getType())+"\n");
             }    
         }
-        
     }
-
-
 }
