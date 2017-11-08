@@ -62,6 +62,7 @@ public class Jeu {
         this.jeuTextArea.setText(null);
         
         for (Joueur myJoueur : this.joueurs) {
+            myJoueur.setCartes(new ArrayList());
             this.jeuTextArea.append(myJoueur.getNom()+"\n");
             for (int i=0;i<7;i++){
                 Random rand = new Random();

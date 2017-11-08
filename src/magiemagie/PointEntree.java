@@ -18,6 +18,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.border.Border;
 
 
 /**
@@ -48,6 +49,7 @@ public class PointEntree {
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
         fenetre.getContentPane().add(myPanel);
         Jeu monJeu = new Jeu(textArea1);
+        Border joueurActif = BorderFactory.createMatteBorder(3, 3, 3, 3, Color.red);
         
         item1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent arg0) {
@@ -77,10 +79,12 @@ public class PointEntree {
         item3.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent arg0) {
                 monJeu.distribuerCartes();
+                monJeu.getJoueurs().get(0).getTextArea().setBorder(joueurActif);
                 for (Joueur myJoueur : monJeu.getJoueurs()){
+                    myJoueur.getTextArea().setText(null);
                     myJoueur.getTextArea().append(myJoueur.getNom()+"\n");
-                    //for (Carte myCarte : myJoueur.getCartes())
-                   //     myJoueur.getTextArea().append(myCarte.getType() +" -> "+ monJeu.getTypeCartes().getTC(myCarte.getType())+"\n");
+                    for (Carte myCarte : myJoueur.getCartes())
+                        myJoueur.getTextArea().append(myCarte.getType() +" -> "+ monJeu.getTypeCartes().getTC(myCarte.getType())+"\n");
                 }
                 fenetre.repaint();
                 fenetre.revalidate();

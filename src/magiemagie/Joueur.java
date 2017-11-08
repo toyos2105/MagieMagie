@@ -21,7 +21,7 @@ public class Joueur {
     public Joueur(String name, JTextArea textArea ) {
         this.nom = name;
         this.cartes = new ArrayList();
-        this.textArea = new JTextArea();
+        this.textArea = textArea;
     }
 
     public JTextArea getTextArea() {
