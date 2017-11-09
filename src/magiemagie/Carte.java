@@ -16,6 +16,10 @@ public class Carte {
         this.type = type;
     }
 
+
+    
+    
+
     public int getType() {
         return type;
     }
